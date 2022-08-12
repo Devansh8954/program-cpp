@@ -7,18 +7,15 @@ int main(){
        /*  Read input as specified in the question.
 	* Print output as specified in the question.
 	*/
-     int N,i=1;
+     int N;
     cin >> N;
-    while(i<=N)
+    for(int i=1;i<=N;i++)
     {
-        int j=i;
-        while(j>=1)
+        for(int j=1;j>=1;j--)
         {
             cout << j;
-            j--;
         }
         cout<< endl;
-        i++;
     }
     return 0;
 }
