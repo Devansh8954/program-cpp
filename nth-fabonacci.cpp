@@ -11,11 +11,17 @@ int main() {
 
        int fibo=1;
 
-       if(n==0) return 0;
 
-       else if(n==1) return 1;
-
-       for(int i=2;i<=n;i++){
+       if(n==1) 
+       {
+        cout<< "1";
+       }
+       else if(n==2)
+       {
+        cout<< "1";
+       }
+       else {
+        for(int i=2;i<=n;i++){
 
            fibo=(first+second)%m;
 
@@ -26,5 +32,7 @@ int main() {
        }
 
        cout<< fibo;
+       }
+       
        return 0;
 }
