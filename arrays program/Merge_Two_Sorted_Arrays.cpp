@@ -1,19 +1,18 @@
 #include <iostream>
 using namespace std;
 
-void merge(int arr1[], int size1, int arr2[], int size2, int ans[])
+void merge(int *arr1, int size1, int *arr2, int size2, int *ans)
 {
-
-    int k=0,i,j;
+    //Write your code here    
+     int k=0,i,j;
     for( i=0,j=0; i<size1 && j<size2 ;)
     {
       if (arr1[i] < arr2[j]) 
       {
             ans[k] = arr1[i];
         k++;
-        i++;}
-    
-        
+        i++;
+		}
         else {
             ans[k] = arr2[j];
         
@@ -21,21 +20,20 @@ void merge(int arr1[], int size1, int arr2[], int size2, int ans[])
             j++;
         }
     }
-    while(i<size1)
+    for(;i<size1;)
     {
         ans[k]=arr1[i];
         k++;
         i++;
     }
     
-    while(j<size2)
+    for(;j<size2;)
     {
         ans[k]=arr2[j];
         k++ ;
         j++;
     }
  
-  
 }
 
 int main()
