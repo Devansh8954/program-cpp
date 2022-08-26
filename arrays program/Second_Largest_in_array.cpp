@@ -1,7 +1,24 @@
 #include <iostream>
 using namespace std;
 
-
+int findSecondLargest(int *input, int n)
+{
+    //Write your code here
+     int largest = -2e31, secondLargest = -2e31;
+    for (int i = 0; i < n; i++)
+    {
+        if (input[i] > largest)
+        {
+            secondLargest = largest;
+            largest = input[i];
+        }
+        if (input[i] > secondLargest && input[i] < largest)
+        {
+            secondLargest = input[i];
+        }
+    }
+    return secondLargest;
+}
 
 int main()
 {
