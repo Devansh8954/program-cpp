@@ -4,16 +4,17 @@ using namespace std;
 
 void printSubstrings(char input[]) {
     // Write your code here
-    int n = strlen(input);
-    
-    for (int len = 1; len <= n; len++){
-      for (int i = 0; i <= n - len; i++){
-         int j = i + len - 1;
-         for (int k = i; k <= j; k++)
-         cout << input[k];
-         cout << endl;
-      }
-   }
+    for(int i = 0; input[i] != '\0'; i++)
+    {
+        for(int j = i; input[j] != '\0'; j++)
+        {
+            for(int k = i;  k <= j; k++)
+            {
+                cout<<input[k];
+            }
+            cout<<endl;
+        }
+    }
     
 }
 
