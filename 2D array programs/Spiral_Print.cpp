@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+/*
 void spiralPrint(int **input, int nRows, int nCols)
 {
     int rs = 0, re = nRows - 1, cs = 0, ce = nCols - 1, count = 0, elements = nRows * nCols;
@@ -32,6 +32,7 @@ void spiralPrint(int **input, int nRows, int nCols)
         cs++;
     }
 }
+*/
 
 void spiralPrint(int **input, int nRows, int nCols)
 {  
