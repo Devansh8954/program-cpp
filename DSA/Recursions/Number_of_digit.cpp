@@ -21,7 +21,6 @@ using namespace std;
 
 int count(int n){
     //write your code here
-    int size=0;
     if(n==0) {
         return 0;
      }
