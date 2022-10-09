@@ -35,15 +35,15 @@ using namespace std;
 
 int arrayRotateCheck(int *input, int size)
 {
-    int i = 0;
-    for (; i < size - 1; i++)
-    {
-        if (input[i + 1] < input[i])
-        {
-            return i + 1;
+    //Write your code here
+    int min = input[0], min_index = 0;
+    for (int i = 0; i < size; i++) {
+        if (min > input[i]) {
+            min = input[i];
+            min_index = i;
         }
     }
-    return 0;
+    return min_index;
 }
 
 int main()
