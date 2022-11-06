@@ -61,7 +61,7 @@ TreeNode<int>* takeInputLevelWise() {
 void printPostOrder(TreeNode<int>* root) {
     // Write your code here
     if(root == NULL) {
-        return;
+        return 0;
     }
 
     for(int i=0; i<root->children.size();i++){
