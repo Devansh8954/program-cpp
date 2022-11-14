@@ -66,52 +66,104 @@ BinaryTreeNode<int>* takeInput() {
     return root;
 }
 
-#include <stack>
-void zigZagOrder(BinaryTreeNode<int> *root)
-{
+// #include <stack>
+// void zigZagOrder(BinaryTreeNode<int> *root)
+// {
+//     if (root == NULL)
+//     {
+//         return;
+//     }
+
+//     stack<BinaryTreeNode<int> *> s1, s2;
+//     s1.push(root);
+
+//     while (!s1.empty() || !s2.empty())
+//     {
+//         while (!s1.empty())
+//         {
+//             BinaryTreeNode<int> *front = s1.top();
+//             s1.pop();
+//             cout << front->data << " ";
+//             if (front->left != NULL)
+//             {
+//                 s2.push(front->left);
+//             }
+//             if (front->right != NULL)
+//             {
+//                 s2.push(front->right);
+//             }
+//         }
+
+//         cout << "\n";
+
+//         while (!s2.empty())
+//         {
+//             BinaryTreeNode<int> *front = s2.top();
+//             s2.pop();
+//             cout << front->data << " ";
+//             if (front->right != NULL)
+//             {
+//                 s1.push(front->right);
+//             }
+//             if (front->left != NULL)
+//             {
+//                 s1.push(front->left);
+//             }
+//         }
+
+//         cout << endl;
+//     }
+// }
+
+#include<bits/stdc++.h>
+using namespace std;
+void zigZagOrder(BinaryTreeNode<int> *root) {
+    // Write your code here
+	vector<int> temp;
+    bool dir=true;
     if (root == NULL)
     {
         return;
     }
+    queue<BinaryTreeNode<int> *> pendingNodes;
+    pendingNodes.push(root);
+    pendingNodes.push(NULL);
 
-    stack<BinaryTreeNode<int> *> s1, s2;
-    s1.push(root);
-
-    while (!s1.empty() || !s2.empty())
+    while (!pendingNodes.empty())
     {
-        while (!s1.empty())
+        BinaryTreeNode<int> *front = pendingNodes.front();
+        pendingNodes.pop();
+
+        if (front == NULL)
         {
-            BinaryTreeNode<int> *front = s1.top();
-            s1.pop();
-            cout << front->data << " ";
+            if(dir==false){
+                reverse(temp.begin(),temp.end());
+            }
+            for(int i=0;i<temp.size();i++){
+                    cout<<temp[i]<<" ";
+             }
+			 temp.clear();
+			 dir=!dir;
+            if (pendingNodes.empty())
+            {
+                break;
+            }
+            cout << endl;
+            pendingNodes.push(NULL);
+        }
+        else
+        {
+            // cout << front->data << " ";
+            temp.push_back(front->data);
             if (front->left != NULL)
             {
-                s2.push(front->left);
+                pendingNodes.push(front->left);
             }
             if (front->right != NULL)
             {
-                s2.push(front->right);
+                pendingNodes.push(front->right);
             }
         }
-
-        cout << "\n";
-
-        while (!s2.empty())
-        {
-            BinaryTreeNode<int> *front = s2.top();
-            s2.pop();
-            cout << front->data << " ";
-            if (front->right != NULL)
-            {
-                s1.push(front->right);
-            }
-            if (front->left != NULL)
-            {
-                s1.push(front->left);
-            }
-        }
-
-        cout << endl;
     }
 }
 
