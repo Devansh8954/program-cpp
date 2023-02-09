@@ -23,9 +23,6 @@ Sample Output 1 :
 #include <iostream>
 using namespace std;
 
-#include <iostream>
-using namespace std;
-
 void print2DArray(int **input, int row, int col) {
 	// Write your code here
     for (int i = 0; i < row; i++)
@@ -40,8 +37,6 @@ void print2DArray(int **input, int row, int col) {
         }
     }
 }
-
-
 
 
 int main() {
