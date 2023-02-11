@@ -25,25 +25,59 @@ Sample Output 2 :
 #include<iostream>
 using namespace std;
 
-int partition(int arr[], int si, int ei) {
-    int pivot = arr[ei];  // taking the last element as pivot
-    int i = (si - 1);      // Index of smaller element
+// int partition(int arr[], int si, int ei) {
+//     int pivot = arr[ei];  // taking the last element as pivot
+//     int i = (si - 1);      // Index of smaller element
 
-    for (int j = si; j < ei; j++) {
-        // If current element is smaller than or
-        // equal to pivot
-        if (arr[j] <= pivot) {
-            i++;  // increment index of smaller element
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
+//     for (int j = si; j < ei; j++) {
+//         // If current element is smaller than or
+//         // equal to pivot
+//         if (arr[j] <= pivot) {
+//             i++;  // increment index of smaller element
+//             int temp = arr[i];
+//             arr[i] = arr[j];
+//             arr[j] = temp;
+//         }
+//     }
+//     int temp = arr[i + 1];
+//     arr[i + 1] = arr[ei];
+//     arr[ei] = temp;
+//     return (i + 1);
+// }
+
+ int partition(int arr[], int si, int ei){
+     int pivot =arr[si];
+     int count = 0;
+
+     for(int i= si+1; i<=ei; i++) {
+         if(arr[i] <=pivot){
+             count++;
+         }
+     }
+
+     int pivotIndex = si + count;
+     int temp = arr[si];
+     arr[si] = arr[pivotIndex];
+     arr[pivotIndex] = temp;
+
+     int i=si,j=ei;
+     while(i<=pivotIndex && j>=pivotIndex){
+          while(arr[i]<=pivot){
+             i++;
+         }
+          while(arr[j]>pivot) {
+             j--;
+         }
+         if (i<pivotIndex || j>pivotIndex) {
+           int temp = arr[i];
+           arr[i] = arr[j];
+           arr[j] = temp;
+           i++;
+           j--;
+         }
     }
-    int temp = arr[i + 1];
-    arr[i + 1] = arr[ei];
-    arr[ei] = temp;
-    return (i + 1);
-}
+    return pivotIndex;
+ }
 
 void quickSortHelper(int input[], int si, int ei) {
     if(si>=ei) {
