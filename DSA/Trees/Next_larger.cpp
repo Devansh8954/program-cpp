@@ -81,9 +81,8 @@ TreeNode<int>* getNextLargerElement(TreeNode<int>* root, int x) {
     {
         TreeNode<int> *smallAns = getNextLargerElement(root->children[i] , x);
 
-    if (nextLargest == NULL)
-        {
-            nextLargest = smallAns;
+        if (nextLargest == NULL || nextLargest->data > smallAns->data) {
+          nextLargest = smallAns;
         }
     }
     return nextLargest;
