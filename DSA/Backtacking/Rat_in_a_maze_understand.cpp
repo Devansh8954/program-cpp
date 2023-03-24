@@ -40,5 +40,5 @@ void ratInAMaze(int maze[][20], int n){
 
 }
 int main(){
-	
+	//User commend
 }
