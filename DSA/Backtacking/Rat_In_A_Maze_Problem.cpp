@@ -53,6 +53,7 @@ Explanation:
 using namespace std;
 int maze[19][19];
 int check[19][19];
+
 void printRatPath(int n) {
   for (int i = 0; i < n; i++)
     for (int j = 0; j < n; j++)
