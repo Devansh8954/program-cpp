@@ -30,7 +30,6 @@ using namespace std;
 #include <bits/stdc++.h>
 using namespace std;
 
-// } Driver Code Ends
 int multAns(int *arr, int si, int ei, int **dp) {
 
   if (si == ei || si == ei - 1)
