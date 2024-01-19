@@ -57,7 +57,7 @@ vector<int> longestConsecutiveIncreasingSequence(int *arr, int n){
    
     for(int i=0;i<n ;i++)
     { 
-       if( m[arr[i]]==false) 
+       if(m[arr[i]]==false) 
          continue;
         
        int nsize=0, nstart=arr[i];
