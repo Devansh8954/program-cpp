@@ -29,14 +29,14 @@ int pairSum(int *arr, int n) {
 
   for (int i = 0; i < n; i++) {
 
-    mp[arr[i]]++;
+    map[arr[i]]++;
   }
 
   int count = 0;
 
   for (int i = 0; i < n; i++) {
 
-    count += mp[sum - arr[i]];
+    count += map[sum - arr[i]];
 
     if (sum - arr[i] == arr[i]) {
 
